@@ -38,7 +38,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
         MaterialPageRoute(builder: (_) => HomePage()),
       );
     } catch (e) {
-      print(e);
+      // Display error message with SnackBar
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.toString())));
     }
   }
 
